@@ -5,21 +5,21 @@
 class Sqsf < Formula
   desc "sqsf is a tool to receive AWS SQS messages like `tail -f`."
   homepage "https://github.com/winebarrel/sqsf"
-  version "1.3.0"
+  version "1.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.0/sqsf_1.3.0_darwin_amd64.tar.gz"
-      sha256 "ccc699fb775f15b18bda0239f762e713d3987adce944f5f58a880534930bc909"
+      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.1/sqsf_1.3.1_darwin_amd64.tar.gz"
+      sha256 "4d2990987ff8c9765cb08624694d8f72f451b6f691a81cae2ed6102bdf5da2c9"
 
       def install
         bin.install 'sqsf'
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.0/sqsf_1.3.0_darwin_arm64.tar.gz"
-      sha256 "c52c7888f09c258ec9e51b546a6ec17a9c0b7750b48c46fd3a8fcca91dcc9e7d"
+      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.1/sqsf_1.3.1_darwin_arm64.tar.gz"
+      sha256 "fc184cfd593ce97893ae0ad1c7e77194908279fa9922d56b13e415a7f5f46b4d"
 
       def install
         bin.install 'sqsf'
@@ -29,16 +29,16 @@ class Sqsf < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.0/sqsf_1.3.0_linux_amd64.tar.gz"
-      sha256 "a6abdcb03b31108c87827b75d316f98906f9380a8b0b6a202f701ea7d61dee30"
+      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.1/sqsf_1.3.1_linux_amd64.tar.gz"
+      sha256 "389d15d30a0ab74ebafaa5cbec7781df08ff702b838537bffd94f0786c51737d"
 
       def install
         bin.install 'sqsf'
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.0/sqsf_1.3.0_linux_arm64.tar.gz"
-      sha256 "322cd0e94cb654a8c1f97538ab62446cabebaa86bd37f0b5361c62c9b97b503b"
+      url "https://github.com/winebarrel/sqsf/releases/download/v1.3.1/sqsf_1.3.1_linux_arm64.tar.gz"
+      sha256 "61bcc9f8305b46c4f20998f518624b2b9c3f0c292dd4f81b571bf0796f4dcdf8"
 
       def install
         bin.install 'sqsf'
