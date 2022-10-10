@@ -5,21 +5,21 @@
 class Sqsf < Formula
   desc "sqsf is a tool to receive AWS SQS messages like `tail -f`."
   homepage "https://github.com/winebarrel/sqsf"
-  version "2.0.0"
+  version "2.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.0.0/sqsf_2.0.0_darwin_amd64.tar.gz"
-      sha256 "673fc3b4e11b63e237932eea1de7f28d56da4b0533ff86bacb7c8eea6fb0663f"
+      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_darwin_amd64.tar.gz"
+      sha256 "6d190137a00aa123f257cfe74dab8fd6924cf25cd67b8192e8934328faa219c7"
 
       def install
         bin.install 'sqsf'
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.0.0/sqsf_2.0.0_darwin_arm64.tar.gz"
-      sha256 "97ecce18bdf61ae05ab9ac3f20f34ac6db549a6068d09a382bd007af008d1f48"
+      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_darwin_arm64.tar.gz"
+      sha256 "b2633b3796747f6b846309f44e20730ba47b65c1bf62c8ac4a36895bf031ffda"
 
       def install
         bin.install 'sqsf'
@@ -28,17 +28,17 @@ class Sqsf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.0.0/sqsf_2.0.0_linux_amd64.tar.gz"
-      sha256 "24fc51422e6da3bf7d9850ab178cdde9405a7395b593ef7ceacf790751dfd32f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_linux_arm64.tar.gz"
+      sha256 "3261b5df077901ef7c235c249b04031efa073a5714f92c40b0acdd18cd627794"
 
       def install
         bin.install 'sqsf'
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.0.0/sqsf_2.0.0_linux_arm64.tar.gz"
-      sha256 "0dd1cc5b2cd5a7e38869460253b591e8e70deebe62d2979953cfe9e094d0d286"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_linux_amd64.tar.gz"
+      sha256 "a2a50ecf7d7dd8f718d8ac88cc2376aa04066fafac964bfb1a897ec253d7a159"
 
       def install
         bin.install 'sqsf'
