@@ -5,21 +5,21 @@
 class Sqsf < Formula
   desc "sqsf is a tool to receive AWS SQS messages like `tail -f`."
   homepage "https://github.com/winebarrel/sqsf"
-  version "2.1.0"
+  version "3.0.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_darwin_amd64.tar.gz"
-      sha256 "6d190137a00aa123f257cfe74dab8fd6924cf25cd67b8192e8934328faa219c7"
+    if Hardware::CPU.arm?
+      url "https://github.com/winebarrel/sqsf/releases/download/v3.0.0/sqsf_3.0.0_darwin_arm64.tar.gz"
+      sha256 "13ebd9b2cb8b2ad87d32d8bd02b3aea940c9551b718def7381ec1390a6974db6"
 
       def install
         bin.install 'sqsf'
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_darwin_arm64.tar.gz"
-      sha256 "b2633b3796747f6b846309f44e20730ba47b65c1bf62c8ac4a36895bf031ffda"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/sqsf/releases/download/v3.0.0/sqsf_3.0.0_darwin_amd64.tar.gz"
+      sha256 "6781c7b60295c2085ea204ed17cdcf2d8b5205e57a25e4e05052803af6f5f6ad"
 
       def install
         bin.install 'sqsf'
@@ -28,17 +28,17 @@ class Sqsf < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_linux_arm64.tar.gz"
-      sha256 "3261b5df077901ef7c235c249b04031efa073a5714f92c40b0acdd18cd627794"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/sqsf/releases/download/v3.0.0/sqsf_3.0.0_linux_amd64.tar.gz"
+      sha256 "74fa203186b4a92d4f7fd8fe3e45b260d37321c6d5df4fe74bb98d551a4a3f93"
 
       def install
         bin.install 'sqsf'
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/sqsf/releases/download/v2.1.0/sqsf_2.1.0_linux_amd64.tar.gz"
-      sha256 "a2a50ecf7d7dd8f718d8ac88cc2376aa04066fafac964bfb1a897ec253d7a159"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/winebarrel/sqsf/releases/download/v3.0.0/sqsf_3.0.0_linux_arm64.tar.gz"
+      sha256 "5fb00b7a58d451afa81514d3785a5943fff00e356fd0251eceeb26b9b355c51c"
 
       def install
         bin.install 'sqsf'
